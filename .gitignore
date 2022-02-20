@@ -1,8 +1,8 @@
-*.log
 .vscode
 .cache
+.pytest_cache
 __pycache__
+venv
 incoming
 outgoing
 staging
-

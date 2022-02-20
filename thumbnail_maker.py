@@ -8,7 +8,7 @@ from urllib.request import urlretrieve
 import PIL
 from PIL import Image
 
-logging.basicConfig(filename='logfile.log', level=logging.DEBUG)
+logging.basicConfig(filename='logfile.log', level=logging.DEBUG, force=True)
 
 class ThumbnailMakerService(object):
     def __init__(self, home_dir='.'):
@@ -16,6 +16,7 @@ class ThumbnailMakerService(object):
         self.input_dir = self.home_dir + os.path.sep + 'incoming'
         self.output_dir = self.home_dir + os.path.sep + 'outgoing'
 
+    # IO-bound method
     def download_images(self, img_url_list):
         # validate inputs
         if not img_url_list:
@@ -33,6 +34,7 @@ class ThumbnailMakerService(object):
 
         logging.info("downloaded {} images in {} seconds".format(len(img_url_list), end - start))
 
+    # CPU-bound method
     def perform_resizing(self):
         # validate inputs
         if not os.listdir(self.input_dir):
