@@ -19,18 +19,21 @@ class ThumbnailMakerService(object):
         self.output_dir = self.home_dir + os.path.sep + 'outgoing'
         self.downloaded_bytes = 0
         self.dl_lock = threading.Lock()
+        max_concurrent_dl = 4
+        self.dl_sem = threading.Semaphore(max_concurrent_dl)
 
     def download_image(self, url):
         # download each image and save to the input dir
-        logging.info('downloading image at URl ' + url)
-        img_filename = urlparse(url).path.split('/')[-1]
-        dest_path = self.input_dir + os.path.sep + img_filename
-        urlretrieve(url, dest_path)
-        img_size = os.path.getsize(dest_path)
-        with self.dl_lock:
-            self.downloaded_bytes += img_size  # While this may seem like one operation, it's really three. First the Python interpreter reads the current value of downloaded_bytes, then it adds that value to the value of img_size, and lastly it stores the summed value back into downloaded_bytes. If one of the threads running this code gets interrupted after it's read the value of downloaded_bytes, summed data could be lost, as some other thread could've also updated the same value without its knowledge. The solution here is to use a lock.
-        # With adding lock we have the guarantee that even if the current thread gets interrupted, no other thread can modify the downloaded_bytes variable while it has the lock.
-        logging.info(f'image [{img_size} bytes] saved to {dest_path}')
+        with self.dl_sem:
+            logging.info('downloading image at URl ' + url)
+            img_filename = urlparse(url).path.split('/')[-1]
+            dest_path = self.input_dir + os.path.sep + img_filename
+            urlretrieve(url, dest_path)
+            img_size = os.path.getsize(dest_path)
+            with self.dl_lock:
+                self.downloaded_bytes += img_size  # While this may seem like one operation, it's really three. First the Python interpreter reads the current value of downloaded_bytes, then it adds that value to the value of img_size, and lastly it stores the summed value back into downloaded_bytes. If one of the threads running this code gets interrupted after it's read the value of downloaded_bytes, summed data could be lost, as some other thread could've also updated the same value without its knowledge. The solution here is to use a lock.
+            # With adding lock we have the guarantee that even if the current thread gets interrupted, no other thread can modify the downloaded_bytes variable while it has the lock.
+            logging.info(f'image [{img_size} bytes] saved to {dest_path}')
 
     # IO-bound method
     def download_images(self, img_url_list):
