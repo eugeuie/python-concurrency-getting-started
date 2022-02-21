@@ -17,13 +17,20 @@ class ThumbnailMakerService(object):
         self.home_dir = home_dir
         self.input_dir = self.home_dir + os.path.sep + 'incoming'
         self.output_dir = self.home_dir + os.path.sep + 'outgoing'
+        self.downloaded_bytes = 0
+        self.dl_lock = threading.Lock()
 
     def download_image(self, url):
         # download each image and save to the input dir
         logging.info('downloading image at URl ' + url)
         img_filename = urlparse(url).path.split('/')[-1]
-        urlretrieve(url, self.input_dir + os.path.sep + img_filename)
-        logging.info('image saved to ' + self.input_dir + os.path.sep + img_filename)
+        dest_path = self.input_dir + os.path.sep + img_filename
+        urlretrieve(url, dest_path)
+        img_size = os.path.getsize(dest_path)
+        with self.dl_lock:
+            self.downloaded_bytes += img_size  # While this may seem like one operation, it's really three. First the Python interpreter reads the current value of downloaded_bytes, then it adds that value to the value of img_size, and lastly it stores the summed value back into downloaded_bytes. If one of the threads running this code gets interrupted after it's read the value of downloaded_bytes, summed data could be lost, as some other thread could've also updated the same value without its knowledge. The solution here is to use a lock.
+        # With adding lock we have the guarantee that even if the current thread gets interrupted, no other thread can modify the downloaded_bytes variable while it has the lock.
+        logging.info(f'image [{img_size} bytes] saved to {dest_path}')
 
     # IO-bound method
     def download_images(self, img_url_list):
@@ -46,7 +53,7 @@ class ThumbnailMakerService(object):
             t.join()
         end = time.perf_counter()
 
-        logging.info("downloaded {} images in {} seconds".format(len(img_url_list), end - start))
+        logging.info("downloaded {} images [{} bytes] in {} seconds".format(len(img_url_list), self.downloaded_bytes, end - start))
 
     # CPU-bound method
     def perform_resizing(self):
