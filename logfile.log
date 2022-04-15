@@ -172,3 +172,61 @@ INFO:root:END make_thumbnails in 21.6461003 seconds
 [Thread-26, 2022-02-21 17:56:08,613, INFO] image [276539 bytes] saved to .\incoming\pexels-photo-341520.jpeg
 [MainThread, 2022-02-21 17:56:08,618, INFO] downloaded 26 images [5627593 bytes] in 6.4423716 seconds
 [MainThread, 2022-02-21 17:56:08,618, INFO] END make_thumbnails in 6.4500044 seconds
+[MainThread, 2022-04-15 13:34:51,946, INFO] START make_thumbnails
+[Thread-1, 2022-04-15 13:34:51,947, INFO] beginning image downloads
+[Thread-2, 2022-04-15 13:34:51,950, INFO] beginning image resizing
+[Thread-2, 2022-04-15 13:34:52,828, INFO] resizing image pexels-photo-48603.jpeg
+[Thread-2, 2022-04-15 13:34:52,943, INFO] done resizing image pexels-photo-48603.jpeg
+[Thread-2, 2022-04-15 13:34:53,545, INFO] resizing image pexels-photo-134392.jpeg
+[Thread-2, 2022-04-15 13:34:53,658, INFO] done resizing image pexels-photo-134392.jpeg
+[Thread-2, 2022-04-15 13:34:54,205, INFO] resizing image pexels-photo-135130.jpeg
+[Thread-2, 2022-04-15 13:34:54,325, INFO] done resizing image pexels-photo-135130.jpeg
+[Thread-2, 2022-04-15 13:34:54,993, INFO] resizing image pexels-photo-167300.jpeg
+[Thread-2, 2022-04-15 13:34:55,121, INFO] done resizing image pexels-photo-167300.jpeg
+[Thread-2, 2022-04-15 13:34:55,752, INFO] resizing image pexels-photo-167921.jpeg
+[Thread-2, 2022-04-15 13:34:55,895, INFO] done resizing image pexels-photo-167921.jpeg
+[Thread-2, 2022-04-15 13:34:56,492, INFO] resizing image pexels-photo-173125.jpeg
+[Thread-2, 2022-04-15 13:34:56,575, INFO] done resizing image pexels-photo-173125.jpeg
+[Thread-2, 2022-04-15 13:34:57,301, INFO] resizing image pexels-photo-185934.jpeg
+[Thread-2, 2022-04-15 13:34:57,379, INFO] done resizing image pexels-photo-185934.jpeg
+[Thread-2, 2022-04-15 13:34:58,175, INFO] resizing image pexels-photo-192454.jpeg
+[Thread-2, 2022-04-15 13:34:58,318, INFO] done resizing image pexels-photo-192454.jpeg
+[Thread-2, 2022-04-15 13:34:59,120, INFO] resizing image pexels-photo-193038.jpeg
+[Thread-2, 2022-04-15 13:34:59,255, INFO] done resizing image pexels-photo-193038.jpeg
+[Thread-2, 2022-04-15 13:35:00,323, INFO] resizing image pexels-photo-193043.jpeg
+[Thread-2, 2022-04-15 13:35:00,482, INFO] done resizing image pexels-photo-193043.jpeg
+[Thread-2, 2022-04-15 13:35:01,744, INFO] resizing image pexels-photo-207962.jpeg
+[Thread-2, 2022-04-15 13:35:01,775, INFO] done resizing image pexels-photo-207962.jpeg
+[Thread-2, 2022-04-15 13:35:02,589, INFO] resizing image pexels-photo-247917.jpeg
+[Thread-2, 2022-04-15 13:35:02,676, INFO] done resizing image pexels-photo-247917.jpeg
+[Thread-2, 2022-04-15 13:35:03,399, INFO] resizing image pexels-photo-247932.jpeg
+[Thread-2, 2022-04-15 13:35:03,569, INFO] done resizing image pexels-photo-247932.jpeg
+[Thread-2, 2022-04-15 13:35:04,194, INFO] resizing image pexels-photo-265186.jpeg
+[Thread-2, 2022-04-15 13:35:04,306, INFO] done resizing image pexels-photo-265186.jpeg
+[Thread-2, 2022-04-15 13:35:05,056, INFO] resizing image pexels-photo-302899.jpeg
+[Thread-2, 2022-04-15 13:35:05,199, INFO] done resizing image pexels-photo-302899.jpeg
+[Thread-2, 2022-04-15 13:35:05,954, INFO] resizing image pexels-photo-317156.jpeg
+[Thread-2, 2022-04-15 13:35:06,089, INFO] done resizing image pexels-photo-317156.jpeg
+[Thread-2, 2022-04-15 13:35:06,880, INFO] resizing image pexels-photo-317383.jpeg
+[Thread-2, 2022-04-15 13:35:07,039, INFO] done resizing image pexels-photo-317383.jpeg
+[Thread-2, 2022-04-15 13:35:07,689, INFO] resizing image pexels-photo-320007.jpeg
+[Thread-2, 2022-04-15 13:35:07,801, INFO] done resizing image pexels-photo-320007.jpeg
+[Thread-2, 2022-04-15 13:35:08,604, INFO] resizing image pexels-photo-322207.jpeg
+[Thread-2, 2022-04-15 13:35:08,749, INFO] done resizing image pexels-photo-322207.jpeg
+[Thread-2, 2022-04-15 13:35:09,502, INFO] resizing image pexels-photo-323503.jpeg
+[Thread-2, 2022-04-15 13:35:09,645, INFO] done resizing image pexels-photo-323503.jpeg
+[Thread-2, 2022-04-15 13:35:10,249, INFO] resizing image pexels-photo-324030.jpeg
+[Thread-2, 2022-04-15 13:35:10,369, INFO] done resizing image pexels-photo-324030.jpeg
+[Thread-2, 2022-04-15 13:35:11,028, INFO] resizing image pexels-photo-324655.jpeg
+[Thread-2, 2022-04-15 13:35:11,124, INFO] done resizing image pexels-photo-324655.jpeg
+[Thread-2, 2022-04-15 13:35:11,843, INFO] resizing image pexels-photo-324658.jpeg
+[Thread-2, 2022-04-15 13:35:11,983, INFO] done resizing image pexels-photo-324658.jpeg
+[Thread-2, 2022-04-15 13:35:12,649, INFO] resizing image pexels-photo-325520.jpeg
+[Thread-2, 2022-04-15 13:35:12,772, INFO] done resizing image pexels-photo-325520.jpeg
+[Thread-2, 2022-04-15 13:35:13,470, INFO] resizing image pexels-photo-333529.jpeg
+[Thread-2, 2022-04-15 13:35:13,568, INFO] done resizing image pexels-photo-333529.jpeg
+[Thread-1, 2022-04-15 13:35:14,434, INFO] downloaded 26 images in 22.4982121 seconds
+[Thread-2, 2022-04-15 13:35:14,434, INFO] resizing image pexels-photo-341520.jpeg
+[Thread-2, 2022-04-15 13:35:14,585, INFO] done resizing image pexels-photo-341520.jpeg
+[Thread-2, 2022-04-15 13:35:14,585, INFO] created 0 thumbnails in 22.635732400000002 seconds
+[MainThread, 2022-04-15 13:35:14,585, INFO] END make_thumbnails in 22.6411816 seconds
